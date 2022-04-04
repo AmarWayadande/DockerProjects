@@ -1,0 +1,81 @@
+Docker 
+  1. create a spring boot App
+  2. create docker file "Dockerfile"
+  3. create jar spring boot app
+  4 .open sts  terminal
+  5. build to docker image write command  "Docker build . -t my app" or "Docker build -t my app ." or  Docker build -f Dockerfile2. -t my app
+  6. check in docker cmd docker image
+  7.docker run -p 8787:8787 my app
+
+
+---------------------------
+Spring Boort 2.3.5 support without Dockerfile to create docker image
+open  STS terminal 
+check mvn -v
+to create Image "mvn spring-boot:build-image"
+to run "docker run -it-p8888:8080 demo:0.0.1-SNAPSHOT"
+
+
+-------------------------------------------------------------------------
+
+run on different port use following command
+java -Dserver.port=8083 -jar ./target/orderfeighclient-0.0.1-SNAPSHOT.jar
+------------------------------------------------------------------------------------
+docker pull nginx:latest
+
+docker –version 
+docker pull  -- pull image from docker hub
+docker run   docker  run  -p2000:80 /docker  run nginx
+docker ps    docker  ps  - shw running container
+docker ps -a  - ahow all container
+docker exec 
+docker stop   - 
+docker kill
+docker commit
+docker login
+docker push
+docker images -all images
+docker rm  -- remove one container docker  rm amar
+docker rmi 
+docker build  Docker build . -t my ap
+
+--------------------------------------------------------------------------------------
+Volunm - 
+
+C:\Users\DELL>docker run --name papu -v "C:\Users\DELL\OneDrive\Documents\New folder":/usr/share/nginx/html -d -p1000:80 nginx
+36c733e7ce8114616a703827b63e8baaab343ba15bc86c7b4e7d2b348232c7bd
+
+C:\Users\DELL>docker exec -it papu bash
+root@36c733e7ce81:/#
+root@36c733e7ce81:/# ls -al
+total 88
+drwxr-xr-x   1 root root 4096 Apr  4 10:58 .
+drwxr-xr-x   1 root root 4096 Apr  4 10:58 ..
+-rwxr-xr-x   1 root root    0 Apr  4 10:58 .dockerenv
+drwxr-xr-x   2 root root 4096 Mar 28 00:00 bin
+drwxr-xr-x   2 root root 4096 Mar 19 13:46 boot
+drwxr-xr-x   5 root root  340 Apr  4 10:58 dev
+drwxr-xr-x   1 root root 4096 Mar 29 16:02 docker-entrypoint.d
+-rwxrwxr-x   1 root root 1202 Mar 29 16:02 docker-entrypoint.sh
+drwxr-xr-x   1 root root 4096 Apr  4 10:58 etc
+drwxr-xr-x   2 root root 4096 Mar 19 13:46 home
+drwxr-xr-x   1 root root 4096 Mar 28 00:00 lib
+drwxr-xr-x   2 root root 4096 Mar 28 00:00 lib64
+drwxr-xr-x   2 root root 4096 Mar 28 00:00 media
+drwxr-xr-x   2 root root 4096 Mar 28 00:00 mnt
+drwxr-xr-x   2 root root 4096 Mar 28 00:00 opt
+dr-xr-xr-x 228 root root    0 Apr  4 10:58 proc
+drwx------   2 root root 4096 Mar 28 00:00 root
+drwxr-xr-x   1 root root 4096 Apr  4 10:58 run
+drwxr-xr-x   2 root root 4096 Mar 28 00:00 sbin
+drwxr-xr-x   2 root root 4096 Mar 28 00:00 srv
+dr-xr-xr-x  11 root root    0 Apr  4 10:58 sys
+drwxrwxrwt   1 root root 4096 Mar 29 16:02 tmp
+drwxr-xr-x   1 root root 4096 Mar 28 00:00 usr
+drwxr-xr-x   1 root root 4096 Mar 28 00:00 var
+
+root@5f8dc84a867c:/# cd /usr/share/nginx/html
+root@5f8dc84a867c:/usr/share/nginx/html# touch contact.html
+
+root@5f8dc84a867c:/usr/share/nginx/html# exit
+
